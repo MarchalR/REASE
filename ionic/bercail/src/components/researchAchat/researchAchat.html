@@ -1,0 +1,39 @@
+<!-- Form content -->
+<ion-list>
+
+    <div style="padding-left:16px">
+    <!-- Postal code -->
+        <ion-label class="rease_form_label" >Codes postaux</ion-label>
+        <codePostaux [Info]="achatInfo" [codePostaux]="codePostaux"></codePostaux>
+    </div>
+    <!-- Minimum budget -->
+    <ion-item class="label">
+        <ion-label class="rease_form_label" floating>Prix minimum</ion-label>
+        <ion-input type="number" [(ngModel)]="achatInfo.prixMin" required></ion-input>
+    </ion-item>
+
+    <!-- Maximum budget -->
+    <ion-item class="label">
+        <ion-label class="rease_form_label" floating>Prix maximum</ion-label>
+        <ion-input type="number" [(ngModel)]="achatInfo.prixMax" required></ion-input>
+    </ion-item>
+
+    <!-- Minimum surface -->
+    <ion-item class="label">
+        <ion-label class="rease_form_label" floating>Superficie minimum</ion-label>
+        <ion-input type="number" [(ngModel)]="achatInfo.supMin" required></ion-input>
+    </ion-item>
+
+    <!-- Maximum surface -->
+    <ion-item class="label">
+        <ion-label class="rease_form_label" floating>Superficie maximum</ion-label>
+        <ion-input type="number" [(ngModel)]="achatInfo.supMax" required></ion-input>
+    </ion-item>
+
+    <!-- Number of rooms -->
+    <ion-item class="label">
+        <ion-label class="rease_form_label" floating>Nombre de pièces</ion-label>
+        <ion-input type="number" [(ngModel)]="achatInfo.pieces" required></ion-input>
+    </ion-item>
+
+</ion-list>

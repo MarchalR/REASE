@@ -1,0 +1,8 @@
+{
+  "name": "Bercail",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "id": "270a5a52"
+}

@@ -1,0 +1,117 @@
+<img src="assets/imgs/status_bar.png"/>
+<!-- Header -->
+<ion-header class="rease_header">
+    <ion-grid>
+        <ion-row nowrap>
+            <!-- Previous button -->
+            <ion-col align-self-center>
+                <button class="rease_previous_btn" (click)="goBack()">
+                    <img src="assets/imgs/button_previous.png">
+                </button>
+            </ion-col>
+            <!-- Title -->
+            <ion-col col-8 align-self-center>
+                <div class="rease_title">Résultats</div>
+            </ion-col>
+            <ion-col align-self-center>
+                <!-- Menu button -->
+                <button class="rease_menu_btn" menuToggle>
+                    <img src="assets/imgs/button_menu.png">
+                </button>
+            </ion-col>
+        </ion-row>
+        <ion-row nowrap>
+            <ion-col>
+                <ion-label>Trie par :</ion-label>
+            </ion-col>
+            <ion-col col-4>
+                <ion-select class="selector" [(ngModel)]="sort" (ionChange)="reload()">
+                    <ion-option [value]="price">Prix</ion-option>
+                    <ion-option [value]="surface">Surface</ion-option>
+                </ion-select>
+            </ion-col>
+            <ion-col>
+                <ion-icon [name]="arrowOrder" class="rease_icon" (click)="changeOrder()"></ion-icon>
+            </ion-col>
+            <ion-col>
+                <button ion-button class="rease_ads_favorite_btn" (click)="showFav()" *ngIf="research">Favoris</button>
+                <button ion-button class="rease_ads_favorite_btn" (click)="showResearch()" *ngIf="!research">Recherche</button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-header>
+<ion-content class="page">
+
+
+    <h2 class="rease_ads_nb">{{ totalItems || '0' }} résultats</h2>
+
+    <ion-list>
+        <div class="rease_ads" ion-item *ngFor="let ad of tabAds">
+            <ion-row>
+                <ion-col col-5>
+                    <img (click)="itemTapped($event, ad)" class="rease_ads_img" *ngIf="ad.image && ad.image.length > 0"
+                         src="{{ad.image[0]}}"/>
+                    <img (click)="itemTapped($event, ad)" class="rease_ads_img"
+                         *ngIf="!ad.image || ad.image.length == 0"
+                         src="assets/imgs/apartment.jpg"/>
+                </ion-col>
+                <ion-col col-7>
+                    <div class="rease_ads_text">
+                        <div class="rease_ads_content">
+                            <ion-row>{{ad.typeL}} {{ad.postalCode}}</ion-row>
+                            <ion-row>
+                                <div *ngIf="ad.surface && !ad.nbRoom">{{ad.surface}}
+                                    m²</div>
+                                <div *ngIf="ad.surface && ad.nbRoom">{{ad.surface}}
+                                    m² - {{ad.nbRoom}} pièces</div>
+                            </ion-row>
+                            <ion-row>{{ad.price}} €</ion-row>
+                        </div>
+                        <div class="rease_ads_logo">
+                            <ion-row end>
+                                <img *ngIf="ad.seloger"         class="rease_logos" src="assets/icon/seloger.png"/>
+                                <img *ngIf="ad.leboncoin"       class="rease_logos" src="assets/icon/leboncoin.png"/>
+                                <img *ngIf="ad.logicimmo"       class="rease_logos" src="assets/icon/logic-immo-moche.png"/>
+                                <ion-icon *ngIf="ad.isFavorite" class="rease_star" name="star"></ion-icon>
+                            </ion-row>
+                        </div>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </div>
+    </ion-list>
+
+</ion-content>
+<!-- Footer -->
+<ion-footer class="rease_footer">
+    <div>
+        <ion-row class="rease_pagination">
+            <ion-col col-2>
+                <!-- Previous button -->
+                <button class="rease_ads_btn" (click)="previousAds()">
+                    <img src="assets/imgs/button_previous_ads_3.png">
+                </button>
+            </ion-col>
+            <ion-col col-3>
+                <!-- Title -->
+                <h1 class="rease_current_ads">Page {{currentPage}}</h1>
+            </ion-col>
+            <ion-col end col-2 class="rease_pagination-arrow">
+                <!-- Menu button -->
+                <button class="rease_ads_btn" (click)="nextAds()">
+                    <img src="assets/imgs/button_next_ads_3.png">
+                </button>
+            </ion-col>
+            <!--<ion-col col-4>
+                <button *ngIf="research" ion-button icon-only (click)="showFav()">
+                    <ion-icon name="star"></ion-icon>
+                    Favoris
+                </button>
+                <button *ngIf="!research" ion-button icon-only (click)="showResearch()">
+                    <ion-icon name="search"></ion-icon>
+                    Recherche
+                </button>
+            </ion-col>-->
+        </ion-row>
+    </div>
+</ion-footer>

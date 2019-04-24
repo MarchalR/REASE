@@ -1,0 +1,219 @@
+list-component {
+  /* --- --- --- --- ---- --- --- --- --- */
+  /* --- --- --- --- PAGE --- --- --- --- */
+  /* --- --- --- --- ---- --- --- --- --- */
+
+  /* --- Entire page --- */
+  .page {
+    font-family: MyriadPro-Regular, 'Myriad Pro Regular', MyriadPro, 'Myriad Pro', Helvetica, Arial, sans-serif;
+    color: #276278;
+  }
+
+  /* --- --- --- --- ------ --- --- --- --- */
+  /* --- --- --- --- HEADER --- --- --- --- */
+  /* --- --- --- --- ------ --- --- --- --- */
+
+  #iphone-frame .statusbar {
+    background-color: white!important;
+  }
+
+  .rease_ads_logo{
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    word-spacing: 10px;
+    font-size: 13px;
+  }
+
+  .rease_logos{
+    height: 13px!important;
+  }
+
+  .rease_star{
+    height: 13px!important;
+    align-items: end;
+    justify-content: end;
+  }
+
+  ion-icon.rease_icon {
+     font-size: 40px; //Preferred size here
+     color: #58b6cc!important;
+     align-items: stretch;
+     text-align: center;
+     width: 20%;
+   }
+
+  /* --- Form fav btn --- */
+  .rease_ads_favorite_btn {
+    background-color: #58b6cc;
+    color: white;
+    border-radius: 0px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .rease_ads_favorite_btn:hover {
+    opacity: 0.8;
+  }
+  .rease_ads_favorite_btn span.button-inner {
+    font-size: 13px;
+    text-transform: none;
+  }
+
+  .selector{
+    max-width: 100% !important;
+  }
+  .rease_pagination.row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .rease_small{
+    width: 70%;
+    padding-right: 25px;
+  }
+
+  /* - iOS - */
+  .content-ios .rease_header {
+    padding-top: 25px;
+    height: 103px;
+  }
+
+  .centered{
+    width: 60%;
+    margin: auto;
+  }
+  /* --- Previous button --- */
+  .rease_previous_btn {
+    vertical-align: middle;
+    display: inline-block;
+    width: 100%;
+  }
+  .rease_previous_btn:hover {
+    opacity: 0.7;
+  }
+
+  /* --- Menu button --- */
+  .rease_menu_btn.bar-buttons {
+    vertical-align: middle;
+    display: inline-block;
+    width: 100%;
+  }
+  .rease_menu_btn:hover {
+    opacity: 0.7;
+  }
+
+  /* --- --- --- --- --- --- --- --- --- */
+  /* --- --- --- --- ADS --- --- --- --- */
+  /* --- --- --- --- --- --- --- --- --- */
+
+  /* --- Ads --- */
+  .rease_ads_nb {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+  /* - iOS - */
+  .content-ios .rease_ads_nb {
+  }
+  .rease_ads {
+    vertical-align: middle;
+    height: 120px;
+    margin-left: 12px;
+    margin-bottom: 15px;
+  }
+  .ion-label.label.label-md {
+    margin-right: 0px;
+  }
+  .list-md .item-block .item-inner {
+    border-bottom: 1px solid #58b6cc;
+    padding-right: 0px;
+    padding-left: 7px;
+    padding-bottom: 15px;
+  }
+  .item-md.activated,
+  .item-ios.activated {
+    background-color: #eeeeee;
+  }
+  /* --- Images --- */
+  .rease_ads_img {
+    width: -webkit-fill-available;
+    vertical-align: middle;
+    object-fit: cover;
+    height: 90px;
+    display: inline-block;
+  }
+  /* --- Text --- */
+  .rease_ads_text {
+    color: #276278;
+    vertical-align: middle;
+    font-weight: 700;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 10px;
+  }
+  .rease_ads_title {
+    color: #276278;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+  span.rease_ads_price {
+    text-align: left;
+    display: block;
+  }
+  .rease_ads_other {
+    color: #58b6cc;
+    font-size: 16px;
+  }
+
+  .list-ios > .item-block:first-child {
+    border-top: none;
+    margin-top: 23px;
+  }
+  .item-inner {
+    padding-bottom: 18px;
+    margin-bottom: 1px;
+  }
+  .list-ios .item-block .item-inner {
+    border-bottom: 1px solid #58b6cc;
+    padding-left: 6px;
+    padding-right: 0px;
+  }
+
+  /* --- --- --- --- ------ --- --- --- --- */
+  /* --- --- --- --- FOOTER --- --- --- --- */
+  /* --- --- --- --- ------ --- --- --- --- */
+
+  /* --- Header - Title + previous button --- */
+  .rease_footer {
+    vertical-align: middle;
+    /*height: 82px;
+    padding-top: 6px;*/
+    background-color: white;
+  }
+  /* --- Title when previous button --- */
+  .rease_current_ads {
+    font-size: 18px;
+    font-weight: 500;
+    color: #276278;
+    margin: auto !important;
+    text-align: center;
+  }
+  /* --- Next ads button --- */
+  .rease_ads_btn {
+    vertical-align: middle;
+    width: 60%;
+    display: inline-block;
+  }
+  .rease_ads_btn:hover {
+    opacity: 0.7;
+  }
+  .rease_pagination-arrow {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

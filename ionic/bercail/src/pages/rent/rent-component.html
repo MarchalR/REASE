@@ -1,0 +1,20 @@
+<ion-content padding class="page">
+
+    <!-- Header -->
+    <div class="rease_header">
+        <!-- Previous button -->
+        <button class="rease_previous_btn" (click)="goBack()">
+            <img src="assets/imgs/button_previous.png">
+        </button>
+        <!-- Title -->
+        <h1 [navPush]="homeComponent" class="rease_title">REASE</h1>
+    </div>
+
+    <!-- Form title -->
+    <h2 class="rease_form_title">FILTRES</h2>
+
+    <researchLocation [locationInfo]="locationInfo" [codePostaux]="codePostaux"></researchLocation>
+
+    <button ion-button block (click)="onResearch()" class="rease_search_btn">Rechercher</button>
+
+</ion-content>

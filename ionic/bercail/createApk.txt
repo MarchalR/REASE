@@ -1,0 +1,35 @@
+// création du store de clé
+keytool -genkey -v -keystore Rease.keystore -alias Rease -keyalg RSA -keysize 2048 -validity 10000
+//password : Re@sePa55W0r6
+
+//générer l'apk non signé
+ionic cordova build --release android
+//signer l'apk non signer
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore Rease.keystore android-release-unsigned.apk Rease
+//optimisation et vérification de l'apk signer
+zipalign -v 4 android-release-unsigned.apk Rease.apk
+//test on device
+adb install Rease.apk
+
+/* description app
+Découvrez Rease, la nouvelle application qui agrège et compare les annonces immobilières.
+
+Grâce à cette app vous pourrez trouver le bien à acheter de vos rêves.
+
+• Agrégateur
+• Comparateur
+• Immobilier
+
+
+Discover Rease, the new app that aggregates and compares real estate listings.
+
+With this app you can find the Real-Estate of your dreams.
+
+• Aggregator
+• Comparator
+• Real-Estate
+
+
+*/
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore Rease.keystore Unsigned.apk Rease

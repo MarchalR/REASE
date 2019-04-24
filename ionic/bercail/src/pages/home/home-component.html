@@ -1,0 +1,21 @@
+<ion-content padding class="page">
+
+    <ion-row>
+        <ion-col col-2></ion-col>
+        <ion-col col-8>
+            <!-- Title -->
+            <div class="rease_title">REASE</div>
+        </ion-col>
+        <ion-col col-2>
+            <!-- Login -->
+            <img [navPush]="authComponent" class="login_logo" src="assets/imgs/login.png"/>
+        </ion-col>
+    </ion-row>
+    <!-- Logo -->
+    <img class="rease_logo" src="assets/imgs/logo_rease.png"/>
+
+    <!-- Rubriques -->
+    <h2 [navPush]="choiceComponent" class="rease_rubric">Acheter</h2>
+    <!--<h2 [navPush]="choiceComponent"  class="rease_rubric">Louer</h2>-->
+
+</ion-content>

@@ -1,0 +1,106 @@
+<ion-content padding class="page">
+
+    <!-- Header -->
+    <form (ngSubmit)="onSubmit()" [formGroup]="form">
+    <div class="rease_header">
+        <ion-grid>
+            <ion-row nowrap>
+                <!-- Previous button -->
+                <ion-col>
+                    <button class="rease_previous_btn"
+                            type="button" (click)="goBack()">
+                        <img src="assets/imgs/button_previous.png">
+                    </button>
+                </ion-col>
+                <!-- Title -->
+                <ion-col col-8 align-self-center>
+                    <div class="rease_title">Recherche Guidé</div>
+                </ion-col>
+                <ion-col>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+
+        <div *ngFor="let question of questions" class="form-row">
+            <app-question [question]="question" [form]="form" [appartChecked]="appartChecked"
+                          [houseChecked]="houseChecked"></app-question>
+        </div>
+    <ion-grid>
+        <ion-row>
+            <ion-col col-10>
+                <ion-item class="rease_question">
+                    <ion-label text-wrap>{{nextquestion.label}}</ion-label>
+                </ion-item>
+            </ion-col>
+            <ion-col></ion-col>
+
+        </ion-row>
+        <!-- Liste des types de questions possibles -->
+        <ion-row *ngIf="nextquestionValid" class="rease_box_response">
+            <ion-col col-8 [ngSwitch]="nextquestion.controlType">
+
+                <ion-item *ngSwitchCase="'textbox'" class="rease_main_response">
+                    <ion-input [(ngModel)]="nextquestion.value"
+                               [ngModelOptions]="{standalone: true}"
+                               (keyup.enter)="ok()"
+                               [type]="nextquestion.type"></ion-input>
+                </ion-item>
+
+                <ion-item *ngSwitchCase="'numbox'" class="rease_main_response">
+                    <ion-input #input [(ngModel)]="nextquestion.value"
+                               [ngModelOptions]="{standalone: true}"
+                               (keyup.enter)="ok()"
+                               [type]="nextquestion.type"></ion-input>
+                    <ion-label>{{nextquestion.symbole}}</ion-label>
+                </ion-item>
+
+                <ion-item *ngSwitchCase="'dropdown'" class="rease_main_response">
+                    <ion-select [id]="nextquestion.key" class="form-control" [(ngModel)]="nextquestion.value" [ngModelOptions]="{standalone: true}">
+                        <ion-option *ngFor="let opt of nextquestion.options" [value]="opt.key">{{opt.value}}
+                        </ion-option>
+                    </ion-select>
+                </ion-item>
+
+                <div *ngSwitchCase="'radio'">
+                    <ion-item class="rease_housing_type_item">
+                        <ion-label class="rease_housing_type_label" fixed>appartement</ion-label>
+                        <ion-toggle class="rease_housing_type_toggle" (click)="appartClick()"
+                                    [(ngModel)]="appartChecked" [ngModelOptions]="{standalone: true}"></ion-toggle>
+                    </ion-item>
+
+                    <ion-item class="rease_housing_type_item">
+                        <ion-label class="rease_housing_type_label">maison</ion-label>
+                        <ion-toggle class="rease_housing_type_toggle" (click)="houseClick()"
+                                    [(ngModel)]="houseChecked" [ngModelOptions]="{standalone: true}"></ion-toggle>
+                    </ion-item>
+                </div>
+
+                <div *ngSwitchCase="'codePostal'" class="rease_main_response">
+                    <codePostaux [Info]="achatInfo" [codePostaux]="codePostaux"></codePostaux>
+                </div>
+
+            </ion-col>
+            <ion-col class="no_padding">
+                    <button ion-button
+                            block
+                            type="button"
+                            class="rease_button_next"
+                            color="secondary"
+                            (click)="ok()"
+                            [disabled]="!form.valid">Suivant
+                    </button>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <button ion-button
+                    block
+                    class="rease_button_end"
+                    type="submit"
+                    *ngIf="form != null"
+                    [disabled]="!form.valid">Terminer
+            </button>
+        </ion-row>
+    </ion-grid>
+    </form>
+</ion-content>

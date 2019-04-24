@@ -1,0 +1,27 @@
+<ion-content padding class="page">
+
+    <!-- Header -->
+    <div class="rease_header">
+        <ion-grid>
+            <ion-row  nowrap >
+                <!-- Previous button -->
+                <ion-col>
+                <button class="rease_previous_btn" (click)="goBack()">
+                    <img src="assets/imgs/button_previous.png">
+                </button>
+                </ion-col>
+                <!-- Title -->
+                <ion-col col-8 align-self-center>
+                    <div class="rease_title">Recherche</div>
+                </ion-col>
+                <ion-col>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+
+    <researchAchat [achatInfo]="achatInfo" [codePostaux]="codePostaux"></researchAchat>
+    <ion-row>
+        <button ion-col col-8-md ion-button block (click)="onResearch()" class="rease_search_btn">Rechercher</button>
+    </ion-row>
+</ion-content>

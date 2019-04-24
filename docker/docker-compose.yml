@@ -1,0 +1,93 @@
+version: '3'
+services:
+  mongo:
+    container_name: mongo
+    image: mongo:latest
+    environment:
+        - TZ=Europe/Paris
+    ports:
+      - 27017:27017
+    networks:
+      - mongo-tor
+      - mongo-symfony
+
+  mysql:
+    image: mysql:5.5.59
+    container_name: mysql
+    command: --max_allowed_packet=100M
+    environment:
+      - MYSQL_ROOT_PASSWORD=bercail
+      - TZ=Europe/Paris
+      - MYSQL_DATABASE=rease_api
+      - MYSQL_USER=rease
+      - MYSQL_PASSWORD=bercail
+    ports:
+      - 3307:3306
+    networks:
+      - mysql-symfony
+
+  webserver:
+    depends_on:
+      - php-fpm
+    image: nginx:alpine
+    container_name: http-nginx
+    environment:
+        - TZ=Europe/Paris
+    working_dir: /application
+    volumes:
+        - ./Symfony/src:/application
+        - ./Symfony/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    ports:
+     - 8000:80
+    networks:
+      - nginx-symfony
+
+  php-fpm:
+    depends_on:
+      - mysql
+    build: Symfony/php-fpm
+    container_name: symfony-api
+    environment:
+        - TZ=Europe/Paris
+    working_dir: /application
+    volumes:
+      - ./Symfony/src:/application
+      - ./Symfony/php-fpm/php-ini-overrides.ini:/etc/php/7.2/fpm/conf.d/99-overrides.ini
+    networks:
+      - mongo-symfony
+      - mysql-symfony
+      - nginx-symfony
+
+  scrapy_tor_scraper:
+    container_name: ScrapyTorScraper
+    build: ./ScrapyTorScraper
+    environment:
+        - TZ=Europe/Paris
+    volumes:
+      - ./ScrapyTorScraper/immobot/immobot:/home/immobot/immobot
+      - ./ScrapyTorScraper/immobot:/home/immobot
+    networks:
+      - mongo-tor
+
+  node_tor_scraper:
+    container_name: NodeTorScraper
+    build: ./NodeTorScraper
+    environment:
+        - TZ=Europe/Paris
+    volumes:
+      - ./NodeTorScraper/volume:/home/NodeTorScraper
+    networks:
+      - mongo-tor
+
+networks:
+  mongo-tor:
+    driver: bridge
+
+  mongo-symfony:
+    driver: bridge
+
+  mysql-symfony:
+    driver: bridge
+    
+  nginx-symfony:
+    driver: bridge

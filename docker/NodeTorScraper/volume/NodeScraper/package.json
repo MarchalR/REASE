@@ -1,0 +1,17 @@
+{
+  "name": "lbcscrap",
+  "version": "1.0.0",
+  "description": "Wrapper for leboncoin-api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scrap-lbc-part": "node lbc_particuliers.js"
+  },
+  "author": "Maxime SITRUK",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.6.0",
+    "leboncoin-api": "0.0.35",
+    "mongodb": "^3.0.1"
+  }
+}

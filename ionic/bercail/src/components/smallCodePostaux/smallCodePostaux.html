@@ -1,0 +1,24 @@
+<!-- Form content -->
+
+
+<!-- Postal code -->
+<ion-grid>
+    <ion-row>
+        <ion-col nowrap align-items-center>
+            <!--<ion-label class="rease_form_label" fixed>code postal</ion-label>-->
+            <ion-icon name="map" class="rease_icon" (click)="onResearchMap()"></ion-icon>
+        </ion-col>
+        <ion-col >
+            <div *ngFor="let codep of Info.codePostal; let i = index">
+                <ion-chip *ngIf="Info.codePostal[i]!== undefined" item-content>
+                    <ion-label>{{Info.codePostal[i]}}</ion-label>
+                    <button ion-button (click)="delete(i)">
+                        <ion-icon name="close"></ion-icon>
+                    </button>
+                </ion-chip>
+            </div>
+        </ion-col>
+    </ion-row>
+</ion-grid>
+
+

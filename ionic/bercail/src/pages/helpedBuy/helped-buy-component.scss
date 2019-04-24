@@ -1,0 +1,261 @@
+helped-buy-component {
+
+  /* --- --- --- --- ---- --- --- --- --- */
+  /* --- --- --- --- PAGE --- --- --- --- */
+  /* --- --- --- --- ---- --- --- --- --- */
+
+  /* --- Entire page --- */
+  .page {
+    font-family: MyriadPro-Regular, 'Myriad Pro Regular', MyriadPro, 'Myriad Pro', Helvetica, Arial, sans-serif;
+    color: #276278;
+  }
+
+  rease_question {
+    margin: 10px!important;
+  }
+  /* --- --- --- --- ------ --- --- --- --- */
+  /* --- --- --- --- HEADER --- --- --- --- */
+  /* --- --- --- --- ------ --- --- --- --- */
+
+  /* --- Header - Title + previous button --- */
+  .rease_header {
+    vertical-align: middle;
+    margin-bottom: 30px;
+  }
+  .rease_wizard_btn,
+  .rease_filter_btn {
+     background-color: #58b6cc;
+     color: white;
+     border-radius: 0px;
+     margin-left: 12px;
+     margin-bottom: 40px;
+   }
+
+  /* --- Title when previous button --- */
+  .rease_title {
+    font-size: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+  }
+  .rease_title:hover {
+    opacity: 0.8;
+  }
+
+  /* --- Previous button --- */
+  .rease_previous_btn {
+    width: 100%;
+    vertical-align: middle;
+    display: inline-block;
+    margin-top: 7px;
+  }
+  .rease_previous_btn:hover {
+    opacity: 0.7;
+  }
+
+  /* --- --- --- --- ---- --- --- --- --- */
+  /* --- --- --- --- FORM --- --- --- --- */
+  /* --- --- --- --- ---- --- --- --- --- */
+
+  /* --- Form title --- */
+  .rease_form_title {
+    font-size: 35px;
+    font-weight: 600;
+    border-bottom: solid 3px #276278;
+    padding-bottom: 5px;
+    margin-left: 16px;
+    width: 270px;
+  }
+
+  /* --- Entire form - Title + content --- */
+  form.ng-untouched.ng-pristine.ng-valid {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  form.ng-pristine.ng-valid.ng-touched,
+  form.ng-valid.ng-touched.ng-dirty,
+  form.ng-valid.ng-dirty.ng-touched,
+  form.ng-untouched.ng-valid.ng-dirty,
+  form.ng-untouched.ng-pristine.ng-invalid,
+  form.ng-pristine.ng-invalid.ng-touched,
+  form.ng-invalid.ng-touched.ng-dirty {
+    margin-left: 20px;
+  }
+
+  /* --- Form content --- */
+  ion-list.list.list-ios {
+    margin-top: 20px;
+  }
+  ion-list.list.list-md {
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  /* --- Form content - 1st element --- */
+  .list-ios > .item-block:first-child {
+    border-top: none;
+    width: 285px;
+  }
+
+  /* --- Form content - inner elements --- */
+  /* - Android - */
+  ion-item.item.item-block.item-md.item-input.item-label-fixed.ng-pristine.ng-valid.ng-touched,
+  ion-item.label.item.item-block.item-md.item-input.item-label-fixed.ng-valid.ng-touched.input-has-value.item-input-has-value.ng-dirty,
+  ion-item.label.item.item-block.item-md.item-input.item-label-fixed.ng-untouched.ng-pristine.ng-valid,
+  ion-item.rease_housing_type_item.item.item-block.item-md.item-toggle,
+  ion-item.label.item.item-block.item-md.item-input.item-label-fixed.ng-untouched.ng-valid.input-has-value.item-input-has-value.ng-dirty,
+  ion-item.item.item-block.item-md.item-input.item-label-fixed.ng-untouched.ng-pristine.ng-valid,
+  ion-item.item.item-block.item-md.item-input.item-label-fixed.ng-untouched.ng-valid.input-has-value.item-input-has-value.ng-dirty,
+  ion-item.label.item.item-block.item-md.item-input.item-label-fixed.ng-untouched.ng-pristine.ng-invalid,
+  ion-item.item.item-block.item-md.item-input.item-label-fixed.ng-untouched.ng-pristine.ng-invalid,
+  ion-item.item.item-block.item-md.item-input.item-label-fixed.ng-pristine.ng-invalid.ng-touched {
+    width: 287px;
+    margin-bottom: 12px;
+  }
+  /* - iOS - */
+  ion-item.item.item-block.item-ios.item-input.item-label-fixed.ng-untouched.ng-pristine.ng-valid,
+  ion-item.item.item-block.item-ios.item-input.item-label-fixed.ng-pristine.ng-valid.ng-touched,
+  ion-item.item.item-block.item-ios.item-input.item-label-fixed.ng-valid.input-has-value.item-input-has-value.ng-dirty.ng-touched,
+  ion-item.item.item-block.item-ios.item-input.item-label-fixed.ng-untouched.ng-valid.input-has-value.item-input-has-value.ng-dirty,
+  ion-item.item.item-block.item-md.item-input.item-label-fixed.ng-valid.ng-touched.input-has-value.item-input-has-value.ng-dirty,
+  ion-item.rease_housing_type_item.item.item-block.item-ios.item-toggl,
+  ion-item.label.item.item-block.item-ios.item-input.item-label-fixed.ng-untouched.ng-pristine.ng-invalid,
+  ion-item.rease_housing_type_item.item.item-block.item-ios.item-toggle,
+  ion-item.label.item.item-block.item-ios.item-input.item-label-fixed.ng-pristine.ng-invalid.ng-touched,
+  ion-item.item.item-block.item-ios.item-input.item-label-fixed.ng-untouched.ng-pristine.ng-invalid,
+  ion-item.item.item-block.item-ios.item-input.item-label-fixed.ng-pristine.ng-invalid.ng-touched {
+    width: 285px;
+    margin-bottom: 12px;
+  }
+  /* - Both Android and iOS - */
+  .list-ios .item-block .item-inner,
+  .list-md .item-block .item-inner {
+    border-bottom: 1px solid #58b6cc;
+  }
+  .rease_box_response{
+    border: 3px solid #58b6cc;
+    background-color: transparent;
+  }
+  .rease_main_response{
+    border: #488aff;
+    background-color: transparent;
+  }
+  .rease_button_end{
+    background: #58b6cc;
+    margin-top: 10px !important;
+  }
+  .rease_button_next{
+    margin: 5px 5px 5px 0px!important;
+  }
+  /*
+  .no_padding {
+    padding: 0px;
+  }*/
+
+  /* --- Form content - inner and last elements --- */
+  .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner,
+  .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner,
+  .item-md.item-input.item-input-has-focus .item-inner,
+  .item-md.item-input.input-has-focus .item-inner,
+  .list-md .item-input.item-input-has-focus:last-child,
+  .list-md .item-input.input-has-focus:last-child,
+  .list-md .item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child,
+  .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child,
+  .item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+    border-bottom-color: #58b6cc;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  /* --- Form content - last element --- */
+  /* - Android - */
+  ion-item.rease_form_last_element.item.item-block.item-md.item-input.item-label-fixed.ng-valid.ng-touched.input-has-value.item-input-has-value.ng-dirty, .rease_form_input {
+    margin-left: 15px;
+    width: 272px;
+  }
+  .ion-item.rease_form_last_element.item.item-block.item-md.item-input.item-label-fixed.ng-untouched.ng-pristine.ng-valid,
+  ion-item.rease_form_last_element.item.item-block.item-md.item-input.item-label-fixed.ng-untouched.ng-valid.input-has-value.item-input-has-value.ng-dirty,
+  ion-item.rease_form_last_element.item.item-block.item-md.item-input.item-label-fixed.ng-untouched.ng-pristine.ng-invalid, .rease_form_input {
+  }
+  .list-md .item-input:last-child, .rease_form_input {
+
+    margin-left: 15px;
+  }
+  /* - iOS - */
+  ion-item.rease_form_last_element.item.item-block.item-ios.item-input.item-label-fixed.ng-untouched.ng-pristine.ng-valid,
+  ion-item.rease_form_last_element.item.item-block.item-ios.item-input.item-label-fixed.ng-pristine.ng-valid.ng-touched,
+  ion-item.rease_form_last_element.item.item-block.item-ios.item-input.item-label-fixed.ng-valid.ng-touched.input-has-value.item-input-has-value.ng-dirty,
+  ion-item.rease_form_last_element.item.item-block.item-ios.item-input.item-label-fixed.ng-untouched.ng-valid.input-has-value.item-input-has-value.ng-dirty,
+  ion-item.rease_form_last_element.item.item-block.item-ios.item-input.item-label-fixed.ng-untouched.ng-pristine.ng-invalid, .rease_form_input {
+    width: 270px;
+  }
+  .list-ios > .item-block:last-child,
+  .list-ios > .item-wrapper:last-child .item-block, .rease_form_input {
+
+    margin-left: 16px;
+  }
+  /* - Both Android and iOS - */
+  .rease_form_last_element, .rease_form_input {
+    padding-left: 0px;
+  }
+
+  /* --- Form labels --- */
+  ion-label.rease_form_label {
+    font-size: 20px!important;
+    color: #58b6cc!important;
+  }
+  ion-label.rease_housing_type_label {
+    font-size: 20px!important;
+    color: #58b6cc!important;
+  }
+
+  /* --- Form inputs --- */
+  input.text-input.text-input-ios,
+  input.text-input.text-input-md{
+    color: #276278;
+  }
+
+  /* --- Form toggles --- */
+  /* - Android - */
+  .toggle-md.toggle-checked .toggle-icon {
+    background-color: #58b6cc;
+  }
+  .toggle-md.toggle-checked .toggle-inner {
+    background-color: #276278;
+  }
+  /* - iOS - */
+  .toggle-ios.toggle-checked .toggle-icon {
+    background-color: #58b6cc;
+  }
+
+  /* --- Form search btn --- */
+  .rease_search_btn {
+    background-color: #58b6cc;
+    color: white;
+    border-radius: 0px;
+    width: 276px;
+    height: 50px;
+    margin-left: 12px;
+    margin-bottom: 14px;
+  }
+  .rease_search_btn:hover {
+    opacity: 0.8;
+  }
+  .rease_search_btn span.button-inner {
+    font-size: 24px;
+    text-transform: none;
+  }
+  /* - Android - */
+  .rease_search_btn.button-md.activated {
+    background-color: #276278;
+    opacity: 1;
+  }
+  /* - iOS - */
+  .rease_search_btn.button-ios.activated {
+    background-color: #276278;
+    opacity: 1;
+  }
+
+}

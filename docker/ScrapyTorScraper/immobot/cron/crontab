@@ -1,0 +1,2 @@
+#0 0,4,8,12,16,20 * * * /home/immobot/cron/scripts/check-ip.sh > /home/logs/cron-check-ip.log 2>&1
+#2 0,4,8,12,16,20 * * *  /home/immobot/cron/scripts/scrap.sh > /home/logs/cron-scrap.log 2>&1

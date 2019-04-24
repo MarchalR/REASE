@@ -1,0 +1,62 @@
+<div class="col-md-3" [formGroup]="form">
+    <ion-row>
+        <ion-col col-10>
+            <ion-item class="rease_question">
+                <ion-label text-wrap>{{question.label}}</ion-label>
+            </ion-item>
+        </ion-col>
+        <ion-col></ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+        </ion-col>
+        <div class="rease_response">
+            <ion-row>
+            <ion-col>
+                <div [ngSwitch]="question.controlType">
+                    <ion-item *ngSwitchCase="'textbox'" >
+                        <ion-input [formControlName]="question.key"
+                                   class="form-control"
+                                   [id]="question.key" [type]="question.type"></ion-input>
+                    </ion-item>
+                    <ion-item *ngSwitchCase="'numbox'">
+                        <ion-input [formControlName]="question.key"
+                                   class="form-control"
+                                   [id]="question.key" [type]="question.type"></ion-input>
+                    </ion-item>
+                    <ion-item *ngSwitchCase="'dropdown'">
+                        <ion-select [id]="question.key" class="form-control" [formControlName]="question.key">
+                            <ion-option *ngFor="let opt of question.options" [value]="opt.key">{{opt.value}}
+                            </ion-option>
+                        </ion-select>
+                    </ion-item>
+
+                    <div *ngSwitchCase="'codePostal'">
+                        <smallCodePostaux [Info]="achatInfo" [codePostaux]="codePostaux"></smallCodePostaux>
+                    </div>
+
+                    <div *ngSwitchCase="'radio'">
+                        <ion-item class="rease_housing_type_item">
+                            <ion-label class="rease_housing_type_label" fixed>appartement</ion-label>
+                            <ion-toggle class="rease_housing_type_toggle" (click)="appartClick()"
+                                        [(ngModel)]="appartChecked" [ngModelOptions]="{standalone: true}"></ion-toggle>
+                        </ion-item>
+
+                        <ion-item class="rease_housing_type_item">
+                            <ion-label class="rease_housing_type_label">maison</ion-label>
+                            <ion-toggle class="rease_housing_type_toggle" (click)="houseClick()"
+                                        [(ngModel)]="houseChecked"
+                                        [ngModelOptions]="{standalone: true}"></ion-toggle>
+                        </ion-item>
+                    </div>
+
+                </div>
+            </ion-col>
+            <ion-col col-2 *ngIf="question.symbole !== '' " class="no_padding">
+                <ion-label>{{question.symbole}}</ion-label>
+            </ion-col>
+            </ion-row>
+        </div>
+        <div class="errorMessage" *ngIf="!isValid">{{question.label}} is required</div>
+    </ion-row>
+</div>

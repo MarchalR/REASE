@@ -1,0 +1,2 @@
+#* 3,7,11,15,19,23 * * * /home/NodeTorScraper/cron/scripts/check-ip.sh > /home/logs/cron-check-ip.log 2>&1
+#0 2,6,10,14,18,22 * * * /home/NodeTorScraper/cron/scripts/scrap.sh > /home/logs/cron-scrap.log 2>&1

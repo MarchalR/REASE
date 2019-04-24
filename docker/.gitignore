@@ -1,0 +1,3 @@
+*.pyc
+ScrapyTorScraper/immobot/output/
+Symfony/src/var/cache/

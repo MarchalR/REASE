@@ -1,0 +1,28 @@
+<ion-content padding class="page">
+
+    <!-- Header -->
+    <div class="rease_header">
+        <ion-row nowrap>
+            <!-- Previous button -->
+            <ion-col>
+                <button class="rease_previous_btn" (click)="goBack()">
+                    <img src="assets/imgs/button_previous.png">
+                </button>
+            </ion-col>
+            <ion-col col-8 align-self-center>
+                <!-- Title -->
+                <div class="rease_title">REASE</div>
+
+            </ion-col>
+            <ion-col>
+            </ion-col>
+        </ion-row>
+    </div>
+
+    <!-- Choice buttons -->
+    <div class="rease_choice_btns">
+        <button ion-button block [navPush]="helpedBuyComponent" class="rease_wizard_btn">J'ai besoin d'aide</button>
+        <button ion-button block [navPush]="buyComponent" class="rease_filter_btn">Je connais mes critères</button>
+    </div>
+
+</ion-content>

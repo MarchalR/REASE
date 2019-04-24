@@ -1,0 +1,48 @@
+<!-- Form content -->
+<ion-list>
+
+    <!-- Apartment -->
+    <ion-item class="rease_housing_type_item">
+        <ion-label class="rease_housing_type_label" fixed>appartement</ion-label>
+        <ion-toggle class="rease_housing_type_toggle" checked></ion-toggle>
+    </ion-item>
+
+    <!-- House -->
+    <ion-item class="rease_housing_type_item">
+        <ion-label class="rease_housing_type_label">maison</ion-label>
+        <ion-toggle class="rease_housing_type_toggle"></ion-toggle>
+    </ion-item>
+
+    <!-- Postal code -->
+
+    <!-- Minimum budget -->
+    <ion-item class="label">
+        <ion-label class="rease_form_label" fixed>prix min</ion-label>
+        <ion-input class="rease_form_input" type="number" [(ngModel)]="locationInfo.prixMin" required></ion-input>
+    </ion-item>
+
+    <!-- Maximum budget -->
+    <ion-item class="label">
+        <ion-label class="rease_form_label" fixed>prix max</ion-label>
+        <ion-input class="rease_form_input" type="number" [(ngModel)]="locationInfo.prixMax" required></ion-input>
+    </ion-item>
+
+    <!-- Minimum surface -->
+    <ion-item class="label">
+        <ion-label class="rease_form_label" fixed>superficie min</ion-label>
+        <ion-input class="rease_form_input" type="number" [(ngModel)]="locationInfo.supMin" required></ion-input>
+    </ion-item>
+
+    <!-- Maximum surface -->
+    <ion-item class="label">
+        <ion-label class="rease_form_label" fixed>superficie max</ion-label>
+        <ion-input class="rease_form_input" type="number" [(ngModel)]="locationInfo.supMax" required></ion-input>
+    </ion-item>
+
+    <!-- Number of rooms -->
+    <ion-item class="label rease_sidebar_last_item">
+        <ion-label class="rease_form_label" fixed>nb de pièces</ion-label>
+        <ion-input class="rease_form_input" type="number" [(ngModel)]="locationInfo.pieces" required></ion-input>
+    </ion-item>
+
+</ion-list>

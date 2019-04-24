@@ -1,0 +1,53 @@
+codePostaux {
+  ion-scroll {
+    height: 100px;
+  }
+  .rease_icon_box{
+    padding: 0px 8px 0px 8px;
+  }
+  .rease_icon {
+    margin: auto;
+    font-size: 20px; //Preferred size here
+    color: #58b6cc!important;
+    align-items: stretch;
+    padding: 8px 8px 8px 8px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.12) !important;
+  }
+  ion-icon.rease_icon {
+    font-size: 40px; //Preferred size here
+  }
+
+  .rease_icon:hover {
+    opacity: 0.7;
+  }
+  ion-searchbar{
+    searchbar-md-input-clear-icon-size: 0px;
+  }
+
+  ion-icon.rease_icon_center {
+    font-size: 40px; //Preferred size here
+    color: #58b6cc!important;
+    align-items: stretch;
+    width: -webkit-fill-available;
+    text-align: center;
+  }
+  .searchbar-md .searchbar-input{
+    padding: 6px 5px 6px 55px !important;
+  }
+
+  ion-label.rease_form_label {
+    font-size: 20px !important;
+    color: #58b6cc !important;
+     padding-right: 130px !important;
+  }
+  rease_form_label_small {
+    font-size: 15px !important;
+    color: #58b6cc !important;
+    background-color: transparent;
+  }
+
+   .item-md {
+    background-color: transparent;
+  }
+}

@@ -1,0 +1,23 @@
+helped-buy-component {
+
+  ion-item{
+    background-color: transparent!important;
+  }
+  .rease_question{
+    margin-left: 15px;
+    border-radius: 10px 10px 15px 2px;
+    background-color: rgba(0, 0, 0, 0.12) !important;
+  }
+  ion-col {
+    padding: 5px 0px!important;
+  }
+  .rease_response{
+    border-radius: 10px 10px 2px 10px;
+    margin-left: 15px;
+    background-color: lightblue;
+  }
+  ion-input{
+    background-color: transparent !important;
+    width: auto;
+  }
+}

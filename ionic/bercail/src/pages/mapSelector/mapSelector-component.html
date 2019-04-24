@@ -1,0 +1,30 @@
+<ion-content>
+
+    <!-- Header -->
+    <div class="rease_header">
+        <ion-grid  nowrap >
+            <ion-row nowrap >
+                <!-- Previous button -->
+                <ion-col>
+                <button class="rease_previous_btn" (click)="goBack()">
+                    <img src="assets/imgs/button_previous.png">
+                </button>
+                </ion-col>
+                <ion-col col-8 align-self-center>
+                <div class="rease_title">Codes Postaux</div>
+                </ion-col>
+
+                <ion-col>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+
+    <!-- Form title -->
+        <div id="map" style="width:100%; height: 60%;"></div>
+    <ion-row>
+        <ion-col></ion-col>
+        <ion-col><button ion-button block (click)="goBack()" class="rease_search_btn">Enregistrer</button></ion-col>
+        <ion-col></ion-col>
+    </ion-row>
+</ion-content>

@@ -1,0 +1,37 @@
+<!-- Sidebar opened -->
+<ion-menu persistent="true" [content]="content" side="right">
+
+    <!-- Header -->
+    <ion-header>
+        <!-- Form title -->
+        <h2 class="rease_form_title">FILTRES</h2>
+        <!-- Form tabs -->
+        <ion-segment [(ngModel)]="recherche">
+            <ion-segment-button value="achat">
+                Acheter
+            </ion-segment-button>
+            <!--
+            <ion-segment-button value="location">
+                Louer
+            </ion-segment-button>-->
+        </ion-segment>
+    </ion-header>
+
+    <!-- Form -->
+    <ion-content scrollbar-y="false" >
+        <!-- Content -->
+        <div [ngSwitch]="recherche">
+            <div *ngSwitchCase="'achat'">
+                <researchAchat [achatInfo]="achatInfo"  [codePostaux]="codePostaux"></researchAchat>
+            </div>
+            <div *ngSwitchCase="'location'">
+                <researchLocation [locationInfo]="locationInfo" [codePostaux]="codePostaux"></researchLocation>
+            </div>
+        </div>
+        <!-- Submit button -->
+        <button ion-button block (click)="onResearch()" class="rease_search_btn">Rechercher</button>
+    </ion-content>
+</ion-menu>
+
+<!-- Sidebar closed -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Search test API yo</title>
+</head>
+<body>
+	<h1>Formulaire de test yo</h1>
+
+	<form id="test_form">
+		<h3>Type de transaction:</h3>
+		<input type="radio" name="transactionType" value="vente"> vente
+		<input type="radio" name="transactionType" value="location"> location <br>
+		<h3>Type de bien:</h3>
+		<input type="radio" name="bienType" value="appartement"> Appartement
+		<input type="radio" name="bienType" value="maison"> Maison <br>
+		<h3>Prix :</h3>
+		Minimum : <input type="number" name="prixMin">&nbsp;&nbsp;
+		Maximum : <input type="number" name="prixMax"><br>
+		<h3>Suface</h3>
+		Minimum : <input type="number" name="surfaceMin">&nbsp;&nbsp;
+		Maximum : <input type="number" name="surfaceMax"><br>
+		<h3>Code Postale</h3>
+		<div id="code_postal">
+		<input type="text" name="postal[]"><br>
+		</div>
+		<input id="addInput" type="button" value="Ajouter un code postal"/>
+	</form>
+	<button id="submit_test">valider</button>
+
+	<script
+	  src="https://code.jquery.com/jquery-3.2.1.min.js"
+	  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	  crossorigin="anonymous"></script>
+	  <script type="text/javascript">
+	  $(document).ready(function()
+   {
+	   $('#addInput').click(function()
+	   {
+		   var c = $("#code_postal input:last").clone();
+		   $("#code_postal").append(c);
+	   });
+   });
+
+
+
+	  $("#submit_test").click(function(){
+		  console.log("toto");
+	  $.ajax({
+				type: 'POST',
+				url: "api/search",
+				data: $("#test_form").serialize(),
+				//or your custom data either as object {foo: "bar", ...} or foo=bar&...
+
+			});
+		});
+	  </script>
+</body>
+</html>

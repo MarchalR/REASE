@@ -1,0 +1,76 @@
+<ion-header class="rease_header">
+    <ion-row nowrap>
+        <!-- Previous button -->
+        <ion-col align-self-center>
+            <button class="rease_previous_btn" (click)="goBack()">
+                <img src="assets/imgs/button_previous.png">
+            </button>
+        </ion-col>
+        <ion-col col-8 align-self-center>
+            <!-- Title -->
+            <div class="rease_title">Détail</div>
+        </ion-col>
+        <ion-col align-self-center>
+            <!-- Menu button -->
+            <button class="rease_menu_btn" menuToggle>
+                <img src="assets/imgs/button_menu.png">
+            </button>
+        </ion-col>
+    </ion-row>
+</ion-header>
+<ion-content class="page">
+
+    <!-- Header -->
+
+
+    <!-- Ads detail title -->
+    <div class="rease_ads_detail_title">
+        <ion-row>
+            <ion-col class="detail_ads_flex" style="padding: 0px">
+                <h4 class="rease_ads_detail_title_info">{{selectedItem.typeL}} </h4>
+                <h4 class="rease_ads_detail_title_info">{{selectedItem.price}} €</h4>
+                <h4 class="rease_ads_detail_title_info" *ngIf="!selectedItem.surface">{{selectedItem.postalCode}}</h4>
+                <h4 class="rease_ads_detail_title_info" *ngIf="selectedItem.surface">{{selectedItem.postalCode}} - {{selectedItem.surface}} m2</h4>
+                <h4 class="rease_ads_detail_title_info" *ngIf="selectedItem.nbRoom">{{selectedItem.nbRoom}} pièces</h4>
+            </ion-col>
+            <ion-col col-4 style="padding: 0px">
+                <ion-buttons end>
+                    <button ion-button block class="rease_ads_favorite_btn"
+                            icon-only (click)="unfavoriteAd()" *ngIf="isFavorite">  Favoris <ion-icon end name="star"></ion-icon>
+                    </button>
+                    <button ion-button block class="rease_ads_favorite_btn"
+                            icon-only (click)="favoriteAd()" *ngIf="!isFavorite">  Favoris <ion-icon end name="star-outline"></ion-icon>
+                    </button>
+                </ion-buttons>
+                <h4 *ngIf="selectedItem.image" class="rease_ads_detail_photo_info">{{selectedItem.image.length}} <ion-icon name="photos"></ion-icon></h4>
+
+            </ion-col>
+        </ion-row>
+    </div>
+
+    <!-- Ads detail image -->
+    <ion-slides>
+        <ion-slide pager="true" *ngFor="let data of selectedItem.image">
+            <img class="rease_ads_detail_img" src="{{data}}"/>
+        </ion-slide>
+    </ion-slides>
+
+    <img class="rease_ads_detail_img" *ngIf="!selectedItem.image" src="assets/imgs/apartment.jpg"/>
+
+    <!-- Ads detail info -->
+    <h3 class="rease_ads_detail_info" *ngIf="selectedItem.title"> {{selectedItem.title}}</h3>
+
+    <!-- Ads detail description -->
+    <p class="rease_ads_detail_description" *ngIf="selectedItem.description">{{selectedItem.description}}</p>
+
+    <!-- Ads detail link to original -->
+    <div *ngFor="let data of selectedItem.annonce">
+        <button *ngIf="selectedItem.url" ion-button block class="rease_filter_btn">
+            <a class="rease_ads_detail_btn_text" href="{{data.url}}">
+                <img *ngIf="data.site.name == 'Se Loger'"    class="rease_logos" src="assets/icon/seloger.png"/>
+                <img *ngIf="data.site.name == 'Le Bon Coin'" class="rease_logos" src="assets/icon/leboncoin.png"/>
+                <img *ngIf="data.site.name == 'Logic Immo'"  class="rease_logos" src="assets/icon/logic-immo-moche.png"/>
+            </a>
+        </button>
+    </div>
+</ion-content>

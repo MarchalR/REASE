@@ -1,0 +1,49 @@
+<ion-content padding>
+    <div class="rease_header">
+        <ion-row>
+            <ion-col>
+                <!-- Previous button -->
+                <button class="rease_previous_btn" (click)="goBack()">
+                    <img src="assets/imgs/button_previous.png">
+                </button>
+            </ion-col>
+            <ion-col col-8>
+                <!-- Title -->
+                <h1 [navPush]="homeComponent" class="rease_title">REASE</h1>
+            </ion-col>
+            <ion-col></ion-col>
+        </ion-row>
+    </div>
+    <ion-grid>
+        <ion-row justify-content-around>
+            <ion-col col-sm-6 col-md-6 col-lg-4 col-xl-3 align-self-center>
+                <form (ngSubmit)="onRegister()">
+                    <ion-item>
+                        <ion-label class="rease_form_label" floating>Nom d'utilisateur</ion-label>
+                        <ion-input [(ngModel)]="form.username" [ngModelOptions]="{standalone: true}"
+                                   class="rease_form_input" type="text"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label class="rease_form_label" floating>Email</ion-label>
+                        <ion-input [(ngModel)]="form.email" [ngModelOptions]="{standalone: true}"
+                                   class="rease_form_input" type="email"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label class="rease_form_label" floating>Mot de passe</ion-label>
+                        <ion-input [(ngModel)]="form.password" [ngModelOptions]="{standalone: true}"
+                                   class="rease_form_input" type="password"></ion-input>
+                    </ion-item>
+
+                    <button margin-top ion-button type="submit" class="login_button">Enregistrement</button>
+
+                </form>
+
+
+            </ion-col>
+
+        </ion-row>
+
+
+    </ion-grid>
+
+</ion-content>

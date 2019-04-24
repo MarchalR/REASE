@@ -1,0 +1,51 @@
+<!-- Form content -->
+
+
+<!-- Postal code -->
+<ion-grid>
+    <ion-row nowrap align-items-center>
+        <div col-12 class="rease_icon_box">
+            <ion-label  class="rease_icon" (click)="onResearchMap()">Carte
+                <ion-icon name="map"></ion-icon>
+            </ion-label>
+        </div>
+    </ion-row>
+    <ion-row>
+        <ion-searchbar col-12
+                       type="number"
+                       [showCancelButton]="false"
+                       [(ngModel)]="selectedPostalCode"
+                       placeholder="Code postal"
+                       (keyup.enter)="searchByKeyword()"
+                       (ionInput)="getItemsEvent($event)"
+                       (ionFocus)="checkFocus($event)">
+        </ion-searchbar>
+    </ion-row>
+</ion-grid>
+
+<ion-grid *ngIf="postalCodeVisible">
+    <ion-row>
+        <ion-scroll scrollY="true" col-12>
+            <div *ngFor="let item of items">
+                <button ion-item *ngIf="item != undefined" (click)="onInput(item.cp, item)">
+                    <ion-label class="rease_form_label_small">{{ item.cp}}</ion-label>
+                </button>
+            </div>
+        </ion-scroll>
+    </ion-row>
+</ion-grid>
+<ion-row nowrap align-items-center>
+    <ion-icon [name]="arrowPostalCode" class="rease_icon_center" (click)="showSelection()"></ion-icon>
+</ion-row>
+<ion-row>
+    <div *ngFor="let codep of Info.codePostal; let i = index">
+        <ion-chip *ngIf="Info.codePostal[i]!== undefined" item-content>
+            <ion-label>{{Info.codePostal[i]}}</ion-label>
+            <button ion-button (click)="delete(i)">
+                <ion-icon name="close"></ion-icon>
+            </button>
+        </ion-chip>
+    </div>
+</ion-row>
+
+

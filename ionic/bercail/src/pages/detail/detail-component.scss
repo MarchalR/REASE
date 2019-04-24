@@ -1,0 +1,210 @@
+detail-component {
+  /* --- --- --- --- ---- --- --- --- --- */
+  /* --- --- --- --- PAGE --- --- --- --- */
+  /* --- --- --- --- ---- --- --- --- --- */
+
+  /* --- Entire page --- */
+  .page {
+    font-family: MyriadPro-Regular, 'Myriad Pro Regular', MyriadPro, 'Myriad Pro', Helvetica, Arial, sans-serif;
+    color: #276278;
+  }
+
+  /* --- --- --- --- ------ --- --- --- --- */
+  /* --- --- --- --- HEADER --- --- --- --- */
+  /* --- --- --- --- ------ --- --- --- --- */
+
+  /* --- Header - Title + previous button --- */
+  .rease_header {
+    vertical-align: middle;
+    margin-bottom: 30px;
+  }
+
+  ion-slides {
+    height: auto !important;
+  }
+  /* --- Previous button --- */
+  .rease_previous_btn {
+    vertical-align: middle;
+    display: inline-block;
+    width: 100%;
+  }
+  .rease_previous_btn:hover {
+    opacity: 0.7;
+  }
+
+  /* --- Menu button --- */
+  .rease_menu_btn {
+    vertical-align: middle;
+    display: inline-block;
+    width: 100%;
+  }
+  .rease_menu_btn:hover {
+    opacity: 0.7;
+  }
+  .rease_wizard_btn,
+  .rease_filter_btn {
+    background-color: #58b6cc;
+    color: white;
+    border-radius: 0px;
+    width: available;
+    height: 50px;
+  }
+  .rease_filter_btn {
+    background-color: white;
+    color: #58b6cc;
+    border: 1px solid #58b6cc;
+  }
+  .detail_ads_flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .rease_wizard_btn:hover,
+  .rease_filter_btn:hover {
+    opacity: 0.8;
+  }
+  .rease_wizard_btn span.button-inner,
+  .rease_filter_btn span.button-inner{
+    font-size: 24px;
+    text-transform: none;
+  }
+  /* - Android - */
+  .rease_wizard_btn.button-md.activated,
+  .rease_filter_btn.button-md.activated {
+    background-color: #276278;
+    opacity: 1;
+  }
+  /* - iOS - */
+  .rease_wizard_btn.button-ios.activated,
+  .rease_filter_btn.button-ios.activated {
+    background-color: #276278;
+    opacity: 1;
+  }
+
+  .rease_ads_detail_title {
+    text-align: center;
+    margin-bottom: 12px;
+    width: 80%;
+    margin: auto;
+    padding-bottom: 5px;
+  }
+  .rease_ads_detail_title_info {
+    margin: 0px;
+    text-align: start;
+    font-size: 18px;
+  }
+  .rease_ads_detail_img {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;
+    height: 150px;
+    display: block;
+    margin-bottom: 30px;
+  }
+  .rease_ads_detail_info {
+    text-align: start;
+    width: 80%;
+    font-size: 18px;
+    padding-bottom: 5px;
+    font-weight: 600;
+    margin: auto;
+    color: #276278;
+  }
+  .favoris {
+    margin-right: 2px;
+  }
+  .rease_ads_detail_photo_info {
+    margin: 0px;
+    text-align: start;
+    font-size: 18px;
+  }
+  .rease_ads_detail_description {
+    text-align: justify;
+    width:80%;
+    margin: auto;
+    margin-bottom: 30px;
+    line-height: 1.2;
+    font-size: 16px;
+  }
+
+  /* --- Form fav btn --- */
+  .rease_ads_favorite_btn {
+    background-color: #58b6cc;
+    color: white;
+    border-radius: 0px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .rease_ads_favorite_btn:hover {
+    opacity: 0.8;
+  }
+  .rease_ads_favorite_btn span.button-inner {
+    font-size: 13px;
+    text-transform: none;
+  }
+
+
+  /* --- Form search btn --- */
+  .rease_ads_detail_btn {
+    background-color: #58b6cc;
+    color: white;
+    border-radius: 0px;
+    width: 100%;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+  }
+  .rease_ads_detail_btn:hover {
+    opacity: 0.8;
+  }
+  .rease_ads_detail_btn span.button-inner {
+    font-size: 24px;
+    text-transform: none;
+  }
+  /* - Android - */
+  .rease_ads_detail_btn.button-md.activated {
+    background-color: #276278;
+    opacity: 1;
+  }
+  /* - iOS - */
+  .rease_ads_detail_btn.button-ios.activated {
+    background-color: #276278;
+    opacity: 1;
+  }
+  .rease_ads_detail_btn_text {
+    color: white;
+    text-decoration: none;
+  }
+  .rease_logos{
+    width: 80%;
+  }
+  .rease_filter_btn {
+    background-color: white;
+    color: #58b6cc;
+    border: 1px solid #58b6cc;
+  }
+  .rease_wizard_btn:hover,
+  .rease_filter_btn:hover {
+    opacity: 0.8;
+  }
+  .rease_wizard_btn span.button-inner,
+  .rease_filter_btn span.button-inner{
+    font-size: 24px;
+    text-transform: none;
+  }
+  /* - Android - */
+  .rease_wizard_btn.button-md.activated,
+  .rease_filter_btn.button-md.activated {
+    background-color: #276278;
+    opacity: 1;
+  }
+  /* - iOS - */
+  .rease_wizard_btn.button-ios.activated,
+  .rease_filter_btn.button-ios.activated {
+    background-color: #276278;
+    opacity: 1;
+  }
+}

@@ -1,0 +1,40 @@
+smallCodePostaux {
+  ion-scroll {
+    height: 100px;
+  }
+  ion-icon.rease_icon {
+    margin: auto;
+    font-size: 40px; //Preferred size here
+    color: #58b6cc!important;
+    align-items: stretch;
+    padding: 2px 15px 2px 15px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.44) !important;
+  }
+  ion-chip{
+    background-color: rgba(255, 255, 255, 0.44) !important;
+  }
+
+  ion-icon.rease_icon_center {
+    font-size: 40px !important; //Preferred size here
+    color: #58b6cc!important;
+    align-items: stretch;
+    width: -webkit-fill-available;
+    text-align: center;
+  }
+
+  ion-label.rease_form_label {
+    font-size: 20px !important;
+    color: #58b6cc !important;
+     padding-right: 130px !important;
+  }
+  rease_form_label_small {
+    font-size: 15px !important;
+    color: #58b6cc !important;
+    background-color: transparent;
+  }
+   .item-md {
+    background-color: transparent;
+  }
+}
